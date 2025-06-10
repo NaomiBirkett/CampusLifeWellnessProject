@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Healthy Quest Manager</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header role="banner">
+    <div class="avatar">
+      <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=facearea&w=80&h=80&facepad=2&q=80" alt="User avatar showing healthy food" />
+    </div>
+    <h2 id="app-title">Healthy Quest Manager</h2>
+    <div aria-live="polite">
+      <span id="userLevelLabel">Level:</span> <span id="userLevel">1</span><br>
+      <span id="userPointsLabel">Points:</span> <span id="userPoints">0</span>
+    </div>
+  </header>
+
+  <main class="main" role="main">
+    <form class="search" role="search" aria-label="Recipe search">
+      <label for="recipeSearch" class="visually-hidden">Search recipes</label>
+      <input id="recipeSearch" type="text" placeholder="Search recipes..." aria-label="Search recipes" />
+    </form>
+
+    <section class="user-preferences" aria-labelledby="preferences-heading">
+      <h2 id="preferences-heading">User Preferences</h2>
+      <form id="preferencesForm" autocomplete="off">
+        <div>
+          <label for="mealTimePref">Preferred Meal Time:</label>
+          <input type="time" id="mealTimePref" name="mealTimePref" />
+        </div>
+        <div>
+          <label for="dietPref">Dietary Preference:</label>
+          <select id="dietPref" name="dietPref">
+            <option value="">Select...</option>
+            <option value="none">No Preference</option>
+            <option value="vegetarian">Vegetarian</option>
+            <option value="vegan">Vegan</option>
+            <option value="pescatarian">Pescatarian</option>
+            <option value="glutenfree">Gluten-Free</option>
+            <option value="dairyfree">Dairy-Free</option>
+            <option value="keto">Keto</option>
+            <option value="paleo">Paleo</option>
+          </select>
+        </div>
+        <div>
+          <label for="allergiesPref">Allergies (comma separated):</label>
+          <input type="text" id="allergiesPref" name="allergiesPref" placeholder="e.g. peanuts, shellfish" />
+        </div>
+        <button type="submit">Save Preferences</button>
+      </form>
+    </section>
+
+    <h1 id="recipe-list-heading">List of Recipes</h1>
+
+    <ul class="recipe-list" aria-labelledby="recipe-list-heading">
+      <li>
+        <img src="https://images.unsplash.com/photo-1519864600265-abb23847ef2c?auto=format&fit=crop&w=60&q=80" alt="Grilled Chicken Salad" />
+        Grilled Chicken Salad
+      </li>
+      <li>
+        <img src="https://images.unsplash.com/photo-1502741338009-cac2772e18bc?auto=format&fit=crop&w=60&q=80" alt="Quinoa and Black Bean Bowl" />
+        Quinoa & Black Bean Bowl
+      </li>
+      <li>
+        <img src="https://images.unsplash.com/photo-1464306076886-debca5e8a6b0?auto=format&fit=crop&w=60&q=80" alt="Oven-Baked Salmon with Veggies" />
+        Oven-Baked Salmon with Veggies
+      </li>
+      <li>
+        <img src="https://images.unsplash.com/photo-1504674900247-ec6b0b1b798e?auto=format&fit=crop&w=60&q=80" alt="Greek Yogurt Parfait" />
+        Greek Yogurt Parfait
+      </li>
+      <li>
+        <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=60&q=80" alt="Vegetable Stir-Fry with Tofu" />
+        Vegetable Stir-Fry with Tofu
+      </li>
+    </ul>
+
+    <button id="completeChallengeBtn" type="button" aria-describedby="challenge-desc">Complete Challenge</button>
+    <span id="challenge-desc" class="visually-hidden">Earn points and level up by completing healthy challenges</span>
+
+    <section class="meal-info" aria-labelledby="meal-info-heading">
+      <h2 id="meal-info-heading" class="visually-hidden">Meal Information</h2>
+      <p><strong>Next meal time:</strong> <span id="mealTime">7:00 PM</span></p>
+      <p><strong>Next meal:</strong> <span id="nextMeal">TBD</span></p>
+    </section>
+
+    <section class="coach-section" aria-label="Coach and suggestions">
+      <div class="coach">
+        <img src="https://images.unsplash.com/photo-1506089676908-3592f7389d4d?auto=format&fit=facearea&w=80&h=80&facepad=2&q=80" alt="Coach avatar showing healthy food" />
+      </div>
+      <div class="suggestions" aria-live="polite">Suggestions</div>
+    </section>
+  </main>
+
+  <script src="main.js"></script>
+</body>
+</html>
